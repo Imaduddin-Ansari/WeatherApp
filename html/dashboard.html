@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard/sidebar.css">
+    <link rel="stylesheet" href="/css/dashboard/weatherwidgets.css">
+    <link rel="stylesheet" href="/css/dashboard/responsive.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Zm0-80h480q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41Zm220-240Z"/></svg>
+                    Weather.io</span>
+                <button onclick=togglesidebar() id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html" id="tablelink">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm240-240H200v160h240v-160Zm80 0v160h240v-160H520Zm-80-80v-160H200v160h240Zm80 0h240v-160H520v160ZM200-680h560v-80H200v80Z"/></svg>
+                    <span>Tables</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+    <form class="search">
+        <div id="weather"></div>
+        <input type="text" placeholder="Search For City" class="searchinput">
+        <button type="submit" class="getweather">
+            <span>Get Weather</span>
+        </button>
+    </form>
+    <div class="wrapper">
+        <div class="containerfirst-box">
+            <div class="spinner" id="loadingSpinner"></div>
+            <div class="header">
+                <div class="units">
+                    <span class="celsius active">&#176C</span>
+                    <span class="fahrenheit">&#176F</span>
+                </div>
+            </div>
+            <div class="body">
+                <h1 class="city"></h1>
+                <div class="datetime"></div>
+                <div class="description"></div>
+                <div class="weathericon"></div>
+                <p class="temperature"></p>
+                <div class="minmax"></div>
+            </div>
+            <div class="info">
+                <div class="card">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M580-240q25 0 42.5-17.5T640-300q0-25-17.5-42.5T580-360q-25 0-42.5 17.5T520-300q0 25 17.5 42.5T580-240Zm-202-2 260-260-56-56-260 260 56 56Zm2-198q25 0 42.5-17.5T440-500q0-25-17.5-42.5T380-560q-25 0-42.5 17.5T320-500q0 25 17.5 42.5T380-440ZM480-80q-137 0-228.5-94T160-408q0-100 79.5-217.5T480-880q161 137 240.5 254.5T800-408q0 140-91.5 234T480-80Zm0-80q104 0 172-70.5T720-408q0-73-60.5-165T480-774Q361-665 300.5-573T240-408q0 107 68 177.5T480-160Zm0-320Z"/>
+                    </svg>
+                    <div>
+                        <p>Humidity</p>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M460-160q-50 0-85-35t-35-85h80q0 17 11.5 28.5T460-240q17 0 28.5-11.5T500-280q0-17-11.5-28.5T460-320H80v-80h380q50 0 85 35t35 85q0 50-35 85t-85 35ZM80-560v-80h540q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43h-80q0-59 40.5-99.5T620-840q59 0 99.5 40.5T760-700q0 59-40.5 99.5T620-560H80Zm660 320v-80q26 0 43-17t17-43q0-26-17-43t-43-17H80v-80h660q59 0 99.5 40.5T880-380q0 59-40.5 99.5T740-240Z"/>
+                    </svg>
+                    <div>
+                        <p>Wind</p>
+                        <p class="wind"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containersecond-box">
+            <div class="weather-video">
+                <video autoplay muted loop id="background-video">
+                    <source src="/videos/cloudy.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-row">
+        <div class="container bottom-box">
+                <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <div class="container bottom-box">
+            <canvas id="myDoughnutChart" width="400" height="300"></canvas>
+        </div>
+        <div class="container bottom-box">
+                <canvas id="myLineChart" width="400" height="300"></canvas>
+        </div>
+    </div>
+</main>
+    <script src="/javascript/dashboardjavascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    
+    #sidebar {
+        position: fixed;
+        top:unset;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        border-right: none;
+        border-top: 1px solid var(--line-clr);
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;
+        z-index: 1000;
+    }
+
+    main {
+        padding: 10px;
+        margin-bottom: 60px;
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    .containerfirst-box{
+        border-radius: 10px;
+    }
+
+    .containersecond-box{
+        display: none;
+    }
+
+    .getweather{
+        height: 50px;
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .bottom-row{
+        grid-template-columns: 1fr;
+        padding:1rem;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+    .info{
+        margin-top: 1rem;
+    }
+
+    .getweather span{
+        font-size: 12px;
+    }
+
+    #sidebar ul {
+        display: flex;
+        justify-content: space-around;
+        align-items:start;
+        width: 100%;
+    }
+
+    #sidebar a {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #toggle-btn {
+        display: none;
+    }
+}

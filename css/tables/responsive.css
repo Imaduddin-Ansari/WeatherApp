@@ -1,0 +1,183 @@
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    #sidebar {
+        position: fixed;
+        top:unset;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        border-right: none;
+        border-top: 1px solid var(--line-clr);
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;
+        z-index: 1000;
+    }
+
+    main {
+        padding: 10px;
+        margin-bottom: 60px;
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    label{
+        font-size: 1rem;
+        margin-left: 3px;
+    }
+
+    h1{
+        text-align: center;
+        padding-bottom: 0.5rem;
+        font-size: 22px;
+    }
+
+    .units{
+        font-size: 1rem;
+    }
+
+    .filter{
+        width: 50%;
+    }
+
+    .filter-dropdown{
+        width: 75%;
+    }
+
+    option{
+        width: 50%;
+    }
+    
+    .units span:first-child{
+        margin-right: 0;
+    }
+
+    .leftbox{
+        width: 80%;
+    }
+
+    .getweather{
+        height: 50px;
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .getweather span{
+        font-size: 12px;
+    }
+
+    #sidebar ul {
+        display: flex;
+        justify-content: space-around;
+        align-items:start;
+        width: 100%;
+    }
+
+    #sidebar a {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #toggle-btn {
+        display: none;
+    }
+
+    .forcasttable{
+        overflow-x: auto;
+    }
+
+    table, tr, td {
+        width: 100%;
+    }
+    .weathericon img {
+        max-width: 50%;
+    }
+    .col3hum, .col4wind {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rightbox {
+        display: block;
+        position: fixed;
+        bottom: 58px;
+        right: 0px;
+        width: 90%;
+        height: 0;
+        z-index: 100;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+        overflow: hidden;
+    }
+    
+    .outerbox .response{
+        overflow-y: auto;
+        padding: 0;
+        height: 100%;
+    }
+
+    .robottyping{
+        white-space: wrap;
+        overflow: hidden;
+        animation:
+        typing 1.5s,
+        cursor .4s step-end infinite alternate;
+    }
+
+    .outerbox{
+        margin-left: 1rem;
+        height: 81%;
+        width: 67%;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 8px;
+    }
+
+    .robottyping{
+        font-size: 5px;
+    }
+
+    .rightbox.active {
+        height: 83%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .helpbutton {
+        display: block;
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        z-index: 10;
+        background-color: #000000;
+        padding: 4px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 30px;
+    }
+
+    .closebutton {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .closebutton.active{
+        display: block;
+        position: fixed;
+        top:30px;
+        right: 30px;
+        z-index: 101;
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+}
