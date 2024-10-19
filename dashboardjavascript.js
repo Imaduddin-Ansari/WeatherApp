@@ -3,12 +3,12 @@ const sidebar=document.getElementById('sidebar')
 const togglebuttonnav=document.getElementById('toggle-btn2')
 const navlist=document.getElementById('mobilelist')
 const videoSources = {
-    clear: '/videos/clearsky.mp4',
-    clouds: '/videos/cloudy.mp4',
-    rain: '/videos/rain.mp4',
-    thunder:'/videos/thunder.mp4',
-    snow: '/videos/snow.mp4',
-    sunny:'/videos/sunny.mp4',
+    clear: 'clearsky.mp4',
+    clouds: 'cloudy.mp4',
+    rain: 'rain.mp4',
+    thunder:'thunder.mp4',
+    snow: 'snow.mp4',
+    sunny:'sunny.mp4',
 };
 
 let myChart;
