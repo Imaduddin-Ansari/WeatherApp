@@ -19,3 +19,5 @@ Side-menu containing links to dashboard page and tables page with a logo icon on
 #Tables# 
 
 Same side-menu from dashboard page, same search and get weather button also displaying any errors that might occur. Then there is a table on the left which displays the weather of each 5 days and 3 hrs daily into a table and you have pagination at the bottom from which you can change pages of the table to display the next 10 values. On the right you have a chatbot which can help answer your queries related to weather of any city. This page is responsive as-well.
+
+Added New Line For SCD Lab Task 7
